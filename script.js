@@ -19,6 +19,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 function guitinnhan() {
+    console.log('cc')
     var username = document.getElementById('username').value
     var tinnhan = document.getElementById('tinnhan').value
     var time = gettime()
@@ -30,8 +31,11 @@ function guitinnhan() {
 }
 
 function gettime() {
+    var date = new Date()
     var seconds = date.getSeconds();
     var minutes = date.getMinutes();
     var hour = date.getHours();
     return hour + ':' + minutes + ':' + seconds
 }
+
+console.log('Started');
