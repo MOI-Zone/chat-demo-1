@@ -34,6 +34,14 @@ function gettime() {
 
 
 //* Load tin nhắn
-firebase.database().ref('chat').on("child_added", function (snapshot) {
-    console.log(snapshot.val())
+firebase.database().ref('/chat').on("child_added", function (snapshot) {
+    var div = tinnhanmau;
+    var div = div.replace('%USERNAME%', snapshot.val().username)
+    var div = div.replace('%TINNHAN%', snapshot.val().tinnhan)
+    var div = div.replace('%TIME%', snapshot.val().time)
+    //* load tin nhắn vào list
+    $('#listtinnhan').append(div)
 });
+
+//* mẫu tin nhắn
+var tinnhanmau = `<p ng-repeat="m in messages"><b>%USERNAME%:</b> %TINNHAN% - <i>%TIME%</i></p>`
