@@ -45,3 +45,11 @@ firebase.database().ref('/chat').on("child_added", function (snapshot) {
 
 //* mẫu tin nhắn
 var tinnhanmau = `<p ng-repeat="m in messages"><b>%USERNAME%:</b> %TINNHAN% - <i>%TIME%</i></p>`
+
+//* xóa tin nhắn
+function deletechat() {
+    if (confirm('Are you sure to remove ALL the chat?')) {
+        firebase.database().ref('chat').remove()
+        $('#listtinnhan').html('')
+    }
+}
