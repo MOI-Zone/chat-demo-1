@@ -35,12 +35,12 @@ function gettime() {
 
 //* Load tin nhắn
 firebase.database().ref('/chat').on("child_added", function (snapshot) {
-    var div = tinnhanmau;
-    var div = div.replace('%USERNAME%', snapshot.val().username)
-    var div = div.replace('%TINNHAN%', snapshot.val().tinnhan)
-    var div = div.replace('%TIME%', snapshot.val().time)
+    var tinnhan = tinnhanmau;
+    var tinnhan = tinnhan.replace('%USERNAME%', snapshot.val().username)
+    var tinnhan = tinnhan.replace('%TINNHAN%', snapshot.val().tinnhan)
+    var tinnhan = tinnhan.replace('%TIME%', snapshot.val().time)
     //* load tin nhắn vào list
-    $('#listtinnhan').append(div)
+    $('#listtinnhan').append(tinnhan)
 });
 
 //* mẫu tin nhắn
