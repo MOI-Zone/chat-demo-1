@@ -14,21 +14,19 @@
             <div class="panel-heading">Chatting app</div>
             <div class="panel-body">
                 <div id="listtinnhan">
-                    <!-- <p><b>%USERNAME%:</b> %TINNHAN% - <i>%TIME%</i></p> -->
                 </div>
-                <div class="form-group">
-                    <input id="username" type="text" class="form-control" placeholder="Username">
+                <form action="javascript:guitinnhan()">
+                    <input id="username" type="text" class="form-control" placeholder="Username" required>
                     <input id="tinnhan" type="text" class="form-control" placeholder="Message here..." required>
-                </div>
-                <button type="submit" class="btn btn-default" onclick="guitinnhan()">Send</button>
+                    <input type="submit" value="Send" class="btn btn-default">
+                </form>
+                <button class="btn btn-default" onclick="deletechat()">Delete chat</button>
             </div>
         </div>
     </div>
 </body>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<!-- <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script> -->
 <script src="./script.js"></script>
 
 </html>
