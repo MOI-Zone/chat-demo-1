@@ -1,8 +1,4 @@
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//* setup database
 const firebaseConfig = {
     apiKey: "AIzaSyB0YNQLJGL2lVIEDrJW-TwYCituJhiqtJA",
     authDomain: "chat-6bb42.firebaseapp.com",
@@ -13,11 +9,9 @@ const firebaseConfig = {
     appId: "1:315120342370:web:6f0fc3efff8dd6cabac83b",
     measurementId: "G-V8QRYBHSJ0"
 };
-
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+//* Gửi tin nhắn
 function guitinnhan() {
     var username = document.getElementById('username').value
     var tinnhan = document.getElementById('tinnhan').value
@@ -29,6 +23,7 @@ function guitinnhan() {
     });
 }
 
+//* Lấy thời gian, Ex: 12:32:43
 function gettime() {
     var date = new Date;
     var seconds = date.getSeconds();
@@ -37,6 +32,8 @@ function gettime() {
     return hour + ':' + minutes + ':' + seconds
 }
 
+
+//* Load tin nhắn
 firebase.database().ref('chat').on("child_added", function (snapshot) {
     console.log(snapshot.val())
 });
